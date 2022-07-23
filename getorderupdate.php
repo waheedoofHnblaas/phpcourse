@@ -10,7 +10,9 @@ $deliveryLong = filterReq("deliveryLong");
 
 
 $stmt = $con -> prepare("UPDATE `orders` 
-SET `delivery_id` = ?, `isWaiting` = '0', `getDelTime` = ?, `deliveryLat` = ?, `deliveryLong` = ? WHERE `orders`.`order_id` = ?");
+  SET `delivery_id` = ?, `isWaiting` = '0',
+ `getDelTime` = ?, `deliveryLat` = ?, `deliveryLong` = ?
+  WHERE `orders`.`order_id` = ?");
 
 
 $stmt->execute(array($deliveryId,$getDelTime,$deliveryLat,$deliveryLong,$orderId));
